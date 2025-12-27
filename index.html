@@ -1,194 +1,156 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>রঙমেলা | থ্রি-পিস কালেকশন</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rongmela | Premium Collection</title>
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f6f6f6;
-}
-header{
-  background:linear-gradient(45deg,#e91e63,#ff9800);
-  color:#fff;
-  padding:18px;
-  text-align:center;
-}
-.products{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
-  padding:15px;
-}
-.card{
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 6px 15px rgba(0,0,0,.12);
-  position:relative;
-}
-.card img{
-  width:100%;
-  display:block;
-}
-.badge-hot{
-  position:absolute;
-  top:8px; left:8px;
-  background:red;
-  color:#fff;
-  font-size:12px;
-  padding:4px 8px;
-  border-radius:6px;
-}
-.badge-free{
-  position:absolute;
-  top:8px; right:8px;
-  background:green;
-  color:#fff;
-  font-size:11px;
-  padding:4px 8px;
-  border-radius:6px;
-}
-.info{
-  padding:10px;
-}
-.price{
-  font-size:20px;
-  color:#e91e63;
-  font-weight:bold;
-}
-.stock{
-  font-size:12px;
-  color:red;
-}
-.btn{
-  display:block;
-  text-align:center;
-  padding:8px;
-  margin-top:6px;
-  border-radius:6px;
-  text-decoration:none;
-  color:#fff;
-}
-.buy{background:#ff5722;}
-.whatsapp{background:#25d366;}
-.review{
-  background:#fff;
-  margin:15px;
-  padding:12px;
-  border-radius:10px;
-}
-.review h3{margin:0 0 8px}
-.review p{margin:4px 0;font-size:14px}
-footer{
-  text-align:center;
-  font-size:13px;
-  padding:15px;
-  color:#555;
-}
+  <!-- SEO -->
+  <meta name="description" content="Rongmela Premium Collection – অর্ডার করুন এখনই">
+  <meta property="og:title" content="Rongmela Premium Collection">
+  <meta property="og:description" content="স্টাইলিশ ডিজাইন | সীমিত স্টক">
+  <meta property="og:type" content="website">
 
-/* Live Order Popup */
-.live-order{
-  position:fixed;
-  bottom:18px;
-  left:18px;
-  background:#fff;
-  padding:10px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,.2);
-  display:none;
-  max-width:260px;
-  z-index:9999;
-}
-.live-order img{
-  width:45px;
-  height:60px;
-  border-radius:6px;
-  object-fit:cover;
-}
-.live-row{display:flex;gap:8px}
-.badge-stock{
-  background:red;
-  color:#fff;
-  font-size:11px;
-  padding:2px 6px;
-  border-radius:5px;
-}
-</style>
+  <!-- Facebook Pixel (ADD YOUR ID) -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'ViewContent');
+  </script>
+  -->
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    .price {
+      font-size: 28px;
+      color: #e60023;
+      font-weight: bold;
+    }
+    .stock {
+      background: #ff9800;
+      color: #fff;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      padding: 10px;
+    }
+    .item {
+      position: relative;
+    }
+    .item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .code {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+    .reviews {
+      background: #fff;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 8px;
+    }
+    .review {
+      margin-bottom: 10px;
+    }
+    .review span {
+      color: gold;
+    }
+    .cta {
+      background: #25d366;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <h1>রঙমেলা</h1>
-  <p>প্রিমিয়াম থ্রি-পিস কালেকশন</p>
-  <p>🚚 সারা বাংলাদেশ ফ্রি ডেলিভারি</p>
+  <h1>Rongmela Premium Collection</h1>
+  <div class="price">৳ 500</div>
+  <div class="stock">⚡ Low Stock Available</div>
 </header>
 
-<section class="products">
-<!-- PRODUCT LOOP -->
-<script>
-for(let i=1;i<=10;i++){
-document.write(`
-<div class="card">
-  <span class="badge-hot">HOT</span>
-  <span class="badge-free">Free Delivery</span>
-  <img src="images/FB_IMG_${i}.jpg">
-  <div class="info">
-    <div>প্রোডাক্ট কোড: <b>RM-00${i}</b></div>
-    <div class="price">৳ ৫০০</div>
-    <div class="stock">স্টক সীমিত</div>
-    <a class="btn buy" href="#">Buy Now</a>
-    <a class="btn whatsapp" 
-       href="https://wa.me/8801762273479?text=আমি RM-00${i} অর্ডার করতে চাই">
-       📞 WhatsApp Order
-    </a>
+<section class="gallery">
+  <!-- AUTO 30 IMAGES -->
+  <script>
+    for(let i=1;i<=30;i++){
+      let num = String(i).padStart(3,'0');
+      document.write(`
+        <div class="item">
+          <img src="images/RM_${num}.jpg" loading="lazy">
+          <div class="code">Code: RM-${num}</div>
+        </div>
+      `);
+    }
+  </script>
+</section>
+
+<section class="reviews">
+  <h2>⭐ Customer Reviews</h2>
+
+  <div class="review">
+    <strong>Farzana Akter</strong>  
+    <span>★★★★★</span>
+    <p>ডিজাইন অনেক সুন্দর, কোয়ালিটি ভালো।</p>
   </div>
-</div>
-`);
-}
-</script>
+
+  <div class="review">
+    <strong>Nusrat Jahan</strong>  
+    <span>★★★★★</span>
+    <p>দাম অনুযায়ী পারফেক্ট। আবার অর্ডার করবো।</p>
+  </div>
+
+  <div class="review">
+    <strong>Sharmin Sultana</strong>  
+    <span>★★★★☆</span>
+    <p>ডেলিভারি ফাস্ট ছিল।</p>
+  </div>
 </section>
 
-<section class="review">
-<h3>⭐ কাস্টমার রিভিউ</h3>
-<p>👩 সুমি (চট্টগ্রাম): কাপড় খুব সুন্দর 😍</p>
-<p>👩 মাহি (ঢাকা): একদম ছবির মতো পেয়েছি</p>
-<p>👩 নাসরিন (চট্টগ্রাম): আবার অর্ডার করবো ইনশাআল্লাহ</p>
-</section>
-
-<footer>
-📘 Facebook Page: Rongmela  
-<br>© 2025 Rongmela
-</footer>
-
-<!-- LIVE ORDER POPUP -->
-<div class="live-order" id="liveOrder"></div>
-
-<script>
-const names=["সুমি","নাসরিন","মাহি","রিমি","তানিয়া","মিম","সাদিয়া"];
-const cities=["চট্টগ্রাম","চট্টগ্রাম","চট্টগ্রাম","ঢাকা"];
-function rand(a){return a[Math.floor(Math.random()*a.length)]}
-function show(){
-let p=Math.floor(Math.random()*10)+1;
-document.getElementById("liveOrder").innerHTML=`
-<div class="live-row">
-<img src="images/FB_IMG_${p}.jpg">
-<div>
-<b>${rand(names)}</b> (${rand(cities)})<br>
-RM-00${p}<br>
-<span class="badge-stock">স্টক কম</span>
-</div>
-</div>`;
-document.getElementById("liveOrder").style.display="block";
-setTimeout(()=>document.getElementById("liveOrder").style.display="none",4500);
-setTimeout(show,Math.random()*12000+8000);
-}
-setTimeout(show,6000);
-</script>
+<a class="cta" href="https://wa.me/880XXXXXXXXXX" target="_blank">
+  📲 WhatsApp এ অর্ডার করুন
+</a>
 
 </body>
 </html>

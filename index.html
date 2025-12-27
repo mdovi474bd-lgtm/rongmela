@@ -3,121 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>রঙমেলা | থ্রি-পিস অনলাইন শপ</title>
+<title>রঙমেলা | থ্রি-পিস কালেকশন</title>
 
 <style>
 body{
   margin:0;
-  font-family: system-ui, sans-serif;
-  background:#f5f5f5;
+  font-family:Arial, sans-serif;
+  background:#f6f6f6;
 }
-
 header{
-  background:linear-gradient(135deg,#ff5f6d,#ffc371);
+  background:linear-gradient(45deg,#e91e63,#ff9800);
   color:#fff;
+  padding:18px;
   text-align:center;
-  padding:20px 10px;
 }
-
-header h1{
-  margin:0;
-  font-size:26px;
-}
-
-header p{
-  margin:5px 0 12px;
-}
-
-.fb-btn{
-  background:#1877f2;
-  color:#fff;
-  padding:10px 16px;
-  border-radius:8px;
-  display:inline-block;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.notice{
-  background:#fff3cd;
-  padding:10px;
-  text-align:center;
-  font-weight:bold;
-}
-
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
-  padding:16px;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  padding:15px;
 }
-
 .card{
   background:#fff;
-  border-radius:16px;
+  border-radius:12px;
   overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,.1);
+  box-shadow:0 6px 15px rgba(0,0,0,.12);
+  position:relative;
 }
-
 .card img{
   width:100%;
-  height:350px;
-  object-fit:cover;
+  display:block;
 }
-
-.card-body{
-  padding:14px;
-}
-
-.card-body h3{
-  margin:0 0 8px;
-}
-
-.price{
-  font-size:26px;
-  font-weight:900;
-  color:#e60000;
-}
-
 .badge-hot{
-  background:#ff0000;
+  position:absolute;
+  top:8px; left:8px;
+  background:red;
   color:#fff;
+  font-size:12px;
   padding:4px 8px;
   border-radius:6px;
+}
+.badge-free{
+  position:absolute;
+  top:8px; right:8px;
+  background:green;
+  color:#fff;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:6px;
+}
+.info{
+  padding:10px;
+}
+.price{
+  font-size:20px;
+  color:#e91e63;
+  font-weight:bold;
+}
+.stock{
   font-size:12px;
-  margin-left:6px;
+  color:red;
 }
-
-.free{
-  color:green;
-  font-weight:bold;
-  margin:6px 0;
-}
-
-.buttons{
-  display:flex;
-  gap:10px;
-  margin-top:10px;
-}
-
-.buttons a{
-  flex:1;
+.btn{
+  display:block;
   text-align:center;
-  padding:12px;
-  border-radius:10px;
+  padding:8px;
+  margin-top:6px;
+  border-radius:6px;
   text-decoration:none;
-  font-weight:bold;
   color:#fff;
 }
-
-.whatsapp{background:#25D366;}
-.buy{background:#000;}
-
+.buy{background:#ff5722;}
+.whatsapp{background:#25d366;}
+.review{
+  background:#fff;
+  margin:15px;
+  padding:12px;
+  border-radius:10px;
+}
+.review h3{margin:0 0 8px}
+.review p{margin:4px 0;font-size:14px}
 footer{
   text-align:center;
-  padding:20px;
-  font-size:14px;
+  font-size:13px;
+  padding:15px;
   color:#555;
+}
+
+/* Live Order Popup */
+.live-order{
+  position:fixed;
+  bottom:18px;
+  left:18px;
+  background:#fff;
+  padding:10px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+  display:none;
+  max-width:260px;
+  z-index:9999;
+}
+.live-order img{
+  width:45px;
+  height:60px;
+  border-radius:6px;
+  object-fit:cover;
+}
+.live-row{display:flex;gap:8px}
+.badge-stock{
+  background:red;
+  color:#fff;
+  font-size:11px;
+  padding:2px 6px;
+  border-radius:5px;
 }
 </style>
 </head>
@@ -125,74 +123,72 @@ footer{
 <body>
 
 <header>
-  <h1>🌸 রঙমেলা 🌸</h1>
-  <p>থ্রি-পিস অনলাইন শপ</p>
-  <a class="fb-btn" href="https://facebook.com/YOURPAGE" target="_blank">📘 Facebook Page</a>
+  <h1>রঙমেলা</h1>
+  <p>প্রিমিয়াম থ্রি-পিস কালেকশন</p>
+  <p>🚚 সারা বাংলাদেশ ফ্রি ডেলিভারি</p>
 </header>
 
-<div class="notice">
-✅ Cash on Delivery | 🚚 সারা বাংলাদেশ
-</div>
-
-<div class="products">
-
-<!-- PRODUCT 1 -->
+<section class="products">
+<!-- PRODUCT LOOP -->
+<script>
+for(let i=1;i<=10;i++){
+document.write(`
 <div class="card">
-<img src="images/FB_IMG_1766845156691.jpg">
-<div class="card-body">
-<h3>রঙমেলা থ্রি-পিস</h3>
-<div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div>
-<div class="free">🚚 ফ্রি ডেলিভারি</div>
-<div class="buttons">
-<a class="whatsapp" href="https://wa.me/8801762273479?text=আমি থ্রি-পিস অর্ডার করতে চাই">📞 WhatsApp</a>
-<a class="buy" href="#">🛒 Buy Now</a>
+  <span class="badge-hot">HOT</span>
+  <span class="badge-free">Free Delivery</span>
+  <img src="images/FB_IMG_${i}.jpg">
+  <div class="info">
+    <div>প্রোডাক্ট কোড: <b>RM-00${i}</b></div>
+    <div class="price">৳ ৫০০</div>
+    <div class="stock">স্টক সীমিত</div>
+    <a class="btn buy" href="#">Buy Now</a>
+    <a class="btn whatsapp" 
+       href="https://wa.me/8801762273479?text=আমি RM-00${i} অর্ডার করতে চাই">
+       📞 WhatsApp Order
+    </a>
+  </div>
 </div>
-</div>
-</div>
+`);
+}
+</script>
+</section>
 
-<!-- PRODUCT 2 -->
-<div class="card">
-<img src="images/FB_IMG_1766845156186.jpg">
-<div class="card-body">
-<h3>রঙমেলা থ্রি-পিস</h3>
-<div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div>
-<div class="free">🚚 ফ্রি ডেলিভারি</div>
-<div class="buttons">
-<a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a>
-<a class="buy" href="#">🛒 Buy Now</a>
-</div>
-</div>
-</div>
-
-<!-- PRODUCT 3 -->
-<div class="card"><img src="images/FB_IMG_1766845169266.jpg"><div class="card-body"><h3>রঙমেলা থ্রি-পিস</h3><div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div><div class="free">🚚 ফ্রি ডেলিভারি</div><div class="buttons"><a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a><a class="buy" href="#">🛒 Buy Now</a></div></div></div>
-
-<!-- PRODUCT 4 -->
-<div class="card"><img src="images/FB_IMG_1766845175776.jpg"><div class="card-body"><h3>রঙমেলা থ্রি-পিস</h3><div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div><div class="free">🚚 ফ্রি ডেলিভারি</div><div class="buttons"><a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a><a class="buy" href="#">🛒 Buy Now</a></div></div></div>
-
-<!-- PRODUCT 5 -->
-<div class="card"><img src="images/FB_IMG_1766845196064.jpg"><div class="card-body"><h3>রঙমেলা থ্রি-পিস</h3><div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div><div class="free">🚚 ফ্রি ডেলিভারি</div><div class="buttons"><a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a><a class="buy" href="#">🛒 Buy Now</a></div></div></div>
-
-<!-- PRODUCT 6 -->
-<div class="card"><img src="images/FB_IMG_1766845201794.jpg"><div class="card-body"><h3>রঙমেলা থ্রি-পিস</h3><div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div><div class="free">🚚 ফ্রি ডেলিভারি</div><div class="buttons"><a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a><a class="buy" href="#">🛒 Buy Now</a></div></div></div>
-
-<!-- PRODUCT 7 -->
-<div class="card"><img src="images/FB_IMG_1766845208932.jpg"><div class="card-body"><h3>রঙমেলা থ্রি-পিস</h3><div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div><div class="free">🚚 ফ্রি ডেলিভারি</div><div class="buttons"><a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a><a class="buy" href="#">🛒 Buy Now</a></div></div></div>
-
-<!-- PRODUCT 8 -->
-<div class="card"><img src="images/FB_IMG_1766845219991.jpg"><div class="card-body"><h3>রঙমেলা থ্রি-পিস</h3><div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div><div class="free">🚚 ফ্রি ডেলিভারি</div><div class="buttons"><a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a><a class="buy" href="#">🛒 Buy Now</a></div></div></div>
-
-<!-- PRODUCT 9 -->
-<div class="card"><img src="images/FB_IMG_1766845234046.jpg"><div class="card-body"><h3>রঙমেলা থ্রি-পিস</h3><div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div><div class="free">🚚 ফ্রি ডেলিভারি</div><div class="buttons"><a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a><a class="buy" href="#">🛒 Buy Now</a></div></div></div>
-
-<!-- PRODUCT 10 -->
-<div class="card"><img src="images/FB_IMG_1766845259474.jpg"><div class="card-body"><h3>রঙমেলা থ্রি-পিস</h3><div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div><div class="free">🚚 ফ্রি ডেলিভারি</div><div class="buttons"><a class="whatsapp" href="https://wa.me/8801762273479">📞 WhatsApp</a><a class="buy" href="#">🛒 Buy Now</a></div></div></div>
-
-</div>
+<section class="review">
+<h3>⭐ কাস্টমার রিভিউ</h3>
+<p>👩 সুমি (চট্টগ্রাম): কাপড় খুব সুন্দর 😍</p>
+<p>👩 মাহি (ঢাকা): একদম ছবির মতো পেয়েছি</p>
+<p>👩 নাসরিন (চট্টগ্রাম): আবার অর্ডার করবো ইনশাআল্লাহ</p>
+</section>
 
 <footer>
-© 2025 রঙমেলা | থ্রি-পিস অনলাইন শপ
+📘 Facebook Page: Rongmela  
+<br>© 2025 Rongmela
 </footer>
+
+<!-- LIVE ORDER POPUP -->
+<div class="live-order" id="liveOrder"></div>
+
+<script>
+const names=["সুমি","নাসরিন","মাহি","রিমি","তানিয়া","মিম","সাদিয়া"];
+const cities=["চট্টগ্রাম","চট্টগ্রাম","চট্টগ্রাম","ঢাকা"];
+function rand(a){return a[Math.floor(Math.random()*a.length)]}
+function show(){
+let p=Math.floor(Math.random()*10)+1;
+document.getElementById("liveOrder").innerHTML=`
+<div class="live-row">
+<img src="images/FB_IMG_${p}.jpg">
+<div>
+<b>${rand(names)}</b> (${rand(cities)})<br>
+RM-00${p}<br>
+<span class="badge-stock">স্টক কম</span>
+</div>
+</div>`;
+document.getElementById("liveOrder").style.display="block";
+setTimeout(()=>document.getElementById("liveOrder").style.display="none",4500);
+setTimeout(show,Math.random()*12000+8000);
+}
+setTimeout(show,6000);
+</script>
 
 </body>
 </html>

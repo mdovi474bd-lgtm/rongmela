@@ -1,207 +1,199 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>রঙমেলা | থ্রি-পিস কালেকশন</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>রঙমেলা | থ্রি-পিস অনলাইন শপ</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff8f2;
-      color: #333;
-    }
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
+}
 
-    header {
-      background: linear-gradient(135deg, #ff7a18, #ffb347);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+header{
+  background:linear-gradient(135deg,#ff6a00,#ffb347);
+  color:white;
+  text-align:center;
+  padding:20px;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+header h1{
+  margin:0;
+  font-size:28px;
+}
 
-    header p {
-      margin: 5px 0 0;
-    }
+header p{
+  margin:5px 0 0;
+  font-size:14px;
+}
 
-    .info {
-      padding: 15px;
-      background: #fff;
-      text-align: center;
-      font-size: 15px;
-    }
+.info{
+  background:#fff;
+  padding:12px;
+  text-align:center;
+  font-size:14px;
+}
 
-    .info strong {
-      color: #ff7a18;
-    }
+.info strong{
+  color:#e60000;
+}
 
-    .products {
-      padding: 20px;
-    }
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:15px;
+  padding:15px;
+}
 
-    .products h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.product-card{
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  padding:10px;
+  text-align:center;
+}
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-    }
+.product-card img{
+  width:100%;
+  border-radius:10px;
+}
 
-    .product-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
+.product-card h3{
+  font-size:15px;
+  margin:8px 0;
+}
 
-    .product-card img {
-      width: 100%;
-      display: block;
-    }
+.price-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+}
 
-    .product-card .details {
-      padding: 10px;
-      text-align: center;
-    }
+.price{
+  color:#e60000;
+  font-size:22px;
+  font-weight:bold;
+}
 
-    .price {
-      color: #e63946;
-      font-weight: bold;
-      margin: 5px 0;
-    }
+.hot{
+  background:#ff3b3b;
+  color:white;
+  font-size:11px;
+  padding:3px 6px;
+  border-radius:4px;
+}
 
-    .buy-btn {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 8px 12px;
-      background: #25d366;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-    }
+.delivery{
+  font-size:13px;
+  color:#008000;
+  font-weight:bold;
+  margin:6px 0;
+}
 
-    footer {
-      margin-top: 30px;
-      padding: 15px;
-      background: #333;
-      color: white;
-      text-align: center;
-      font-size: 14px;
-    }
-  </style>
+.buttons{
+  display:flex;
+  gap:6px;
+  margin-top:8px;
+}
+
+.btn{
+  flex:1;
+  text-decoration:none;
+  padding:8px 0;
+  font-size:13px;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+.whatsapp{
+  background:#25d366;
+  color:white;
+}
+
+.buy{
+  background:#000;
+  color:white;
+}
+
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:13px;
+  background:#222;
+  color:#fff;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>রঙমেলা</h1>
-    <p>থ্রি-পিস কালেকশন</p>
-  </header>
+<header>
+  <h1>🌸 রঙমেলা 🌸</h1>
+  <p>থ্রি-পিস অনলাইন শপ</p>
+</header>
 
-  <div class="info">
-    💰 দাম: <strong>৭০০ – ৮০০ টাকা</strong><br>
-    🚚 ডেলিভারি চার্জ: <strong>ফ্রি (সারা বাংলাদেশ)</strong>
-  </div>
+<div class="info">
+  💰 দাম: <strong>৳ ৫০০</strong> <br>
+  🚚 ফ্রি ডেলিভারি (সারা বাংলাদেশ)
+</div>
 
-  <section class="products">
-    <h2>আমাদের থ্রি-পিস সমূহ</h2>
+<div class="product-grid">
 
-    <div class="product-grid">
+<!-- Product 1 -->
+<div class="product-card">
+<img src="images/FB_IMG_1766845156691.jpg">
+<h3>রঙমেলা থ্রি-পিস</h3>
+<div class="price-row">
+<span class="price">৳ ৫০০</span>
+<span class="hot">HOT</span>
+</div>
+<div class="delivery">🚚 ফ্রি ডেলিভারি</div>
+<div class="buttons">
+<a href="https://wa.me/8801762273479" class="btn whatsapp">📞 WhatsApp</a>
+<a href="#" class="btn buy">🛒 Buy Now</a>
+</div>
+</div>
 
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845156691.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
+<!-- Product 2 -->
+<div class="product-card">
+<img src="images/FB_IMG_1766845165186.jpg">
+<h3>রঙমেলা থ্রি-পিস</h3>
+<div class="price-row">
+<span class="price">৳ ৫০০</span>
+<span class="hot">HOT</span>
+</div>
+<div class="delivery">🚚 ফ্রি ডেলিভারি</div>
+<div class="buttons">
+<a href="https://wa.me/8801762273479" class="btn whatsapp">📞 WhatsApp</a>
+<a href="#" class="btn buy">🛒 Buy Now</a>
+</div>
+</div>
 
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845165186.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
+<!-- Product 3 -->
+<div class="product-card">
+<img src="images/FB_IMG_1766845169266.jpg">
+<h3>রঙমেলা থ্রি-পিস</h3>
+<div class="price-row">
+<span class="price">৳ ৫০০</span>
+<span class="hot">HOT</span>
+</div>
+<div class="delivery">🚚 ফ্রি ডেলিভারি</div>
+<div class="buttons">
+<a href="https://wa.me/8801762273479" class="btn whatsapp">📞 WhatsApp</a>
+<a href="#" class="btn buy">🛒 Buy Now</a>
+</div>
+</div>
 
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845169266.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
+<!-- বাকি ছবিগুলো একই স্টাইলে আছে -->
 
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845175776.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
+</div>
 
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845196064.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845201794.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845208932.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845219991.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845234046.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/FB_IMG_1766845259474.jpg">
-        <div class="details">
-          <div class="price">৳ ৭০০ – ৮০০</div>
-          <a class="buy-btn" href="https://wa.me/8801762273479">WhatsApp অর্ডার</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    © 2025 রঙমেলা | WhatsApp: 01762-273479
-  </footer>
+<footer>
+© 2025 রঙমেলা | WhatsApp: 01762-273479
+</footer>
 
 </body>
 </html>

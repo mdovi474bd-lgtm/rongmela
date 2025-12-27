@@ -1,153 +1,38 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>রংমেলা এক্সক্লুসিভ কালেকশন</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>রংমেলা এক্সক্লুসিভ কালেকশন</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont;
-      background:#f6f6f6;
-      color:#222;
-    }
-    header{
-      background:#ffffff;
-      padding:12px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      box-shadow:0 2px 6px rgba(0,0,0,0.08);
-      position:sticky;
-      top:0;
-      z-index:10;
-    }
-    header img{
-      height:40px;
-    }
-    header a{
-      text-decoration:none;
-      color:#1877f2;
-      font-weight:600;
-    }
-
-    .hero{
-      background:linear-gradient(135deg,#ff4d6d,#ff8fa3);
-      color:#fff;
-      padding:30px 16px;
-      text-align:center;
-    }
-    .hero h1{
-      margin:0 0 8px;
-      font-size:24px;
-    }
-    .hero p{
-      margin:0;
-      font-size:15px;
-    }
-
-    .container{
-      padding:12px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-      gap:12px;
-    }
-
-    .card{
-      background:#fff;
-      border-radius:10px;
-      overflow:hidden;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-      position:relative;
-    }
-
-    .card img{
-      width:100%;
-      display:block;
-      cursor:pointer;
-    }
-
-    .badge{
-      position:absolute;
-      top:8px;
-      left:8px;
-      background:#e63946;
-      color:#fff;
-      font-size:12px;
-      padding:4px 6px;
-      border-radius:4px;
-    }
-
-    .free{
-      position:absolute;
-      top:8px;
-      right:8px;
-      background:#2a9d8f;
-      color:#fff;
-      font-size:12px;
-      padding:4px 6px;
-      border-radius:4px;
-    }
-
-    .info{
-      padding:10px;
-      text-align:center;
-    }
-
-    .price{
-      font-size:18px;
-      font-weight:700;
-      color:#e63946;
-    }
-
-    .code{
-      font-size:12px;
-      color:#555;
-      margin:4px 0;
-    }
-
-    .btn{
-      display:block;
-      margin-top:8px;
-      padding:8px;
-      background:#000;
-      color:#fff;
-      text-decoration:none;
-      border-radius:6px;
-      font-size:14px;
-    }
-
-    .btn.whatsapp{
-      background:#25d366;
-    }
-
-    /* Image Zoom Modal */
-    .modal{
-      display:none;
-      position:fixed;
-      top:0;left:0;
-      width:100%;height:100%;
-      background:rgba(0,0,0,0.8);
-      justify-content:center;
-      align-items:center;
-      z-index:20;
-    }
-    .modal img{
-      max-width:90%;
-      max-height:90%;
-      border-radius:8px;
-    }
-  </style>
+<style>
+body{margin:0;font-family:system-ui;background:#f4f4f4}
+header{background:#fff;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 6px rgba(0,0,0,.1);position:sticky;top:0}
+header img{height:40px}
+header a{text-decoration:none;color:#1877f2;font-weight:600}
+.hero{background:linear-gradient(135deg,#ff4d6d,#ff8fa3);color:#fff;padding:26px 12px;text-align:center}
+.hero h1{margin:0;font-size:24px}
+.hero p{margin-top:6px;font-size:15px}
+.container{padding:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.12);position:relative}
+.card img{width:100%;cursor:pointer}
+.badge{position:absolute;top:8px;left:8px;background:#e63946;color:#fff;font-size:12px;padding:4px 6px;border-radius:4px}
+.free{position:absolute;top:8px;right:8px;background:#2a9d8f;color:#fff;font-size:12px;padding:4px 6px;border-radius:4px}
+.info{text-align:center;padding:10px}
+.price{font-size:18px;font-weight:700;color:#e63946}
+.code{font-size:12px;color:#555;margin:4px 0}
+.btn{display:block;margin-top:6px;padding:8px;background:#000;color:#fff;text-decoration:none;border-radius:6px;font-size:14px}
+.whatsapp{background:#25d366}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);align-items:center;justify-content:center;z-index:20}
+.modal img{max-width:90%;max-height:90%;border-radius:8px}
+</style>
 </head>
 
 <body>
 
 <header>
-  <img src="images/logo.png" alt="রংমেলা লোগো">
+  <img src="images/logo.png">
   <a href="https://www.facebook.com/share/1Eztqbjndu/" target="_blank">Facebook Page</a>
 </header>
 
@@ -159,69 +44,40 @@
 <div class="container">
   <div class="grid">
 
-    <!-- PRODUCTS START -->
-    <!-- RM_001 to RM_030 -->
-
-    <!-- Copy pattern -->
-    <!-- Example card -->
-    <!-- Change image + code only -->
-
-    <!-- LOOP STYLE MANUAL -->
-    <!-- 30 PRODUCTS -->
-
-    <!-- START -->
-    <!-- You can duplicate safely -->
-
-    <!-- Product Template -->
-    <!-- ================= -->
-
-    <!-- RM_001 -->
-    <div class="card">
-      <span class="badge">HOT</span>
-      <span class="free">ফ্রি ডেলিভারি</span>
-      <img src="images/RM_001.jpg" onclick="zoom(this.src)">
-      <div class="info">
-        <div class="price">৳ ৫০০</div>
-        <div class="code">Product Code: RM-001</div>
-        <a class="btn" href="#">Buy Now</a>
-        <a class="btn whatsapp" href="https://wa.me/880000000000?text=আমি RM-001 অর্ডার করতে চাই" target="_blank">WhatsApp Order</a>
-      </div>
+<!-- 🔥 ৩০টা প্রোডাক্ট AUTO -->
+<script>
+for(let i=1;i<=30;i++){
+  let n = i.toString().padStart(3,'0');
+  document.write(`
+  <div class="card">
+    <span class="badge">HOT</span>
+    <span class="free">ফ্রি ডেলিভারি</span>
+    <img src="images/RM_${n}.jpg" onclick="zoom(this.src)">
+    <div class="info">
+      <div class="price">৳ ৫০০</div>
+      <div class="code">Product Code: RM-${n}</div>
+      <a class="btn" href="#">Buy Now</a>
+      <a class="btn whatsapp" target="_blank"
+      href="https://wa.me/880000000000?text=আমি RM-${n} অর্ডার করতে চাই">
+      WhatsApp Order</a>
     </div>
-
-    <!-- AUTO GENERATED -->
-    <!-- RM_002 → RM_030 -->
-    <!-- SAME STRUCTURE -->
-
-    <!-- I’m showing compressed version -->
-    <!-- Works perfectly -->
-
-    <!-- Generate remaining -->
-    <!-- ↓↓↓ -->
-
-    <!-- JS will not be used to avoid ads issue -->
-
-    <!-- END -->
-
-    <!-- RM_002 to RM_030 -->
-    <!-- (All same structure) -->
-
-    <!-- NOTE: Images already uploaded so just works -->
-
-    <!-- To save space assume copied -->
+  </div>
+  `);
+}
+</script>
 
   </div>
 </div>
 
-<!-- Image Zoom Modal -->
 <div class="modal" id="modal" onclick="this.style.display='none'">
   <img id="modalImg">
 </div>
 
 <script>
-  function zoom(src){
-    document.getElementById('modalImg').src = src;
-    document.getElementById('modal').style.display = 'flex';
-  }
+function zoom(src){
+  document.getElementById("modalImg").src=src;
+  document.getElementById("modal").style.display="flex";
+}
 </script>
 
 </body>

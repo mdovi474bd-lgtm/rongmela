@@ -6,26 +6,44 @@
 <title>রংমেলা এক্সক্লুসিভ কালেকশন</title>
 
 <style>
-body{margin:0;font-family:system-ui;background:#f4f4f4}
-header{background:#fff;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 6px rgba(0,0,0,.1);position:sticky;top:0}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5}
+header{background:#fff;padding:10px 15px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 6px rgba(0,0,0,.1);position:sticky;top:0;z-index:10}
 header img{height:40px}
-header a{text-decoration:none;color:#1877f2;font-weight:600}
-.hero{background:linear-gradient(135deg,#ff4d6d,#ff8fa3);color:#fff;padding:26px 12px;text-align:center}
+header a{text-decoration:none;color:#1877f2;font-weight:bold}
+
+.hero{background:linear-gradient(135deg,#ff4d6d,#ff8fa3);color:#fff;text-align:center;padding:28px 12px}
 .hero h1{margin:0;font-size:24px}
-.hero p{margin-top:6px;font-size:15px}
-.container{padding:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
-.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.12);position:relative}
+.hero p{margin:6px 0 0}
+
+.delivery{background:#2a9d8f;color:#fff;text-align:center;padding:8px;font-weight:bold}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;padding:12px}
+
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);position:relative}
 .card img{width:100%;cursor:pointer}
-.badge{position:absolute;top:8px;left:8px;background:#e63946;color:#fff;font-size:12px;padding:4px 6px;border-radius:4px}
-.free{position:absolute;top:8px;right:8px;background:#2a9d8f;color:#fff;font-size:12px;padding:4px 6px;border-radius:4px}
+.badge{position:absolute;top:8px;left:8px;background:red;color:#fff;font-size:12px;padding:3px 6px;border-radius:4px}
+.stock{position:absolute;top:8px;right:8px;background:green;color:#fff;font-size:12px;padding:3px 6px;border-radius:4px}
+
 .info{text-align:center;padding:10px}
-.price{font-size:18px;font-weight:700;color:#e63946}
-.code{font-size:12px;color:#555;margin:4px 0}
-.btn{display:block;margin-top:6px;padding:8px;background:#000;color:#fff;text-decoration:none;border-radius:6px;font-size:14px}
-.whatsapp{background:#25d366}
+.price{font-size:20px;color:#e63946;font-weight:bold}
+.code{font-size:12px;color:#555}
+.btn{display:block;margin-top:6px;padding:8px;border-radius:6px;text-decoration:none;color:#fff;font-weight:bold}
+.buy{background:#ff5722}
+.wa{background:#25d366}
+
+.section{background:#fff;margin:12px;padding:14px;border-radius:10px}
+.section h3{margin-top:0}
+
+.review{background:#f1f1f1;padding:8px;border-radius:6px;margin-top:6px}
+
+footer{text-align:center;padding:20px;font-size:14px;color:#555}
+
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);align-items:center;justify-content:center;z-index:20}
 .modal img{max-width:90%;max-height:90%;border-radius:8px}
+
+.form{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;z-index:30}
+.form-box{background:#fff;padding:15px;border-radius:10px;width:90%;max-width:350px}
+.form-box input,.form-box textarea{width:100%;padding:8px;margin-top:6px}
 </style>
 </head>
 
@@ -41,42 +59,81 @@ header a{text-decoration:none;color:#1877f2;font-weight:600}
   <p>ফ্যাশন যা সবাই খুঁজছে</p>
 </section>
 
-<div class="container">
-  <div class="grid">
+<div class="delivery">🚚 সারা বাংলাদেশ ফ্রি ডেলিভারি</div>
 
-<!-- 🔥 ৩০টা প্রোডাক্ট AUTO -->
+<div class="grid">
 <script>
 for(let i=1;i<=30;i++){
-  let n = i.toString().padStart(3,'0');
-  document.write(`
-  <div class="card">
-    <span class="badge">HOT</span>
-    <span class="free">ফ্রি ডেলিভারি</span>
-    <img src="images/RM_${n}.jpg" onclick="zoom(this.src)">
-    <div class="info">
-      <div class="price">৳ ৫০০</div>
-      <div class="code">Product Code: RM-${n}</div>
-      <a class="btn" href="#">Buy Now</a>
-      <a class="btn whatsapp" target="_blank"
-      href="https://wa.me/880000000000?text=আমি RM-${n} অর্ডার করতে চাই">
-      WhatsApp Order</a>
-    </div>
-  </div>
-  `);
+let n=i.toString().padStart(3,'0');
+document.write(`
+<div class="card">
+<span class="badge">HOT</span>
+<span class="stock">In Stock</span>
+<img src="images/RM_${n}.jpg" onclick="zoom(this.src)">
+<div class="info">
+<div class="price">৳ ৫০০</div>
+<div class="code">Product Code: RM-${n}</div>
+<a class="btn buy" onclick="openForm('RM-${n}')">Buy Now</a>
+<a class="btn wa" target="_blank"
+href="https://wa.me/8801762273479?text=আমি RM-${n} (৳৫০০) অর্ডার করতে চাই">
+WhatsApp Order</a>
+</div>
+</div>
+`);
 }
 </script>
-
-  </div>
 </div>
 
+<div class="section">
+<h3>About Rongmela</h3>
+<p>রংমেলা একটি বিশ্বস্ত অনলাইন পোশাক শপ, যেখানে মানসম্মত ও ট্রেন্ডি পোশাক সাশ্রয়ী দামে পাওয়া যায়।</p>
+</div>
+
+<div class="section">
+<h3>Customer Review</h3>
+<div class="review">⭐⭐⭐⭐⭐ খুব সুন্দর কোয়ালিটি – নুসরাত</div>
+<div class="review">⭐⭐⭐⭐⭐ ছবির মতোই পেয়েছি – মেহজাবিন</div>
+</div>
+
+<div class="section">
+<h3>FAQ</h3>
+<p><b>ডেলিভারি কতদিন?</b><br>৩–৫ কর্মদিবস</p>
+<p><b>পেমেন্ট?</b><br>Cash on Delivery</p>
+</div>
+
+<footer>
+© 2025 রংমেলা<br>
+<a href="https://www.facebook.com/share/1Eztqbjndu/" target="_blank">Facebook Page</a>
+</footer>
+
+<!-- Image Zoom -->
 <div class="modal" id="modal" onclick="this.style.display='none'">
-  <img id="modalImg">
+<img id="modalImg">
+</div>
+
+<!-- Order Form -->
+<div class="form" id="form">
+<div class="form-box">
+<h3>Order Confirm</h3>
+<input id="pcode" readonly>
+<input placeholder="আপনার নাম">
+<input placeholder="মোবাইল নম্বর">
+<textarea placeholder="ঠিকানা"></textarea>
+<button class="btn buy" onclick="confirmOrder()">Confirm Order</button>
+</div>
 </div>
 
 <script>
 function zoom(src){
-  document.getElementById("modalImg").src=src;
-  document.getElementById("modal").style.display="flex";
+modalImg.src=src;modal.style.display='flex';
+}
+function openForm(code){
+pcode.value=code;
+form.style.display='flex';
+}
+function confirmOrder(){
+alert("ধন্যবাদ! আপনার অর্ডার গ্রহণ করা হয়েছে।");
+form.style.display='none';
 }
 </script>
 

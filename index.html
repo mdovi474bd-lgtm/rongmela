@@ -8,191 +8,192 @@
 <style>
 body{
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#f5f5f5;
+  font-family:Arial,sans-serif;
+  background:#fff7f2;
 }
 
-header{
-  background:linear-gradient(135deg,#ff6a00,#ffb347);
-  color:white;
+.offer{
+  background:#000;
+  color:#fff;
   text-align:center;
-  padding:20px;
-}
-
-header h1{
-  margin:0;
-  font-size:28px;
-}
-
-header p{
-  margin:5px 0 0;
-  font-size:14px;
-}
-
-.info{
-  background:#fff;
-  padding:12px;
-  text-align:center;
-  font-size:14px;
-}
-
-.info strong{
-  color:#e60000;
-}
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-  gap:15px;
-  padding:15px;
-}
-
-.product-card{
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15);
   padding:10px;
-  text-align:center;
-}
-
-.product-card img{
-  width:100%;
-  border-radius:10px;
-}
-
-.product-card h3{
-  font-size:15px;
-  margin:8px 0;
-}
-
-.price-row{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:6px;
-}
-
-.price{
-  color:#e60000;
-  font-size:22px;
   font-weight:bold;
 }
 
-.hot{
-  background:#ff3b3b;
+header{
+  background:linear-gradient(135deg,#ff5f6d,#ff9966);
   color:white;
-  font-size:11px;
-  padding:3px 6px;
-  border-radius:4px;
+  text-align:center;
+  padding:22px 10px;
 }
 
-.delivery{
-  font-size:13px;
-  color:#008000;
+header h1{margin:0;font-size:28px;}
+header p{margin:6px 0;}
+
+.fb-btn{
+  background:#1877F2;
+  color:white;
+  padding:8px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.trust{
+  text-align:center;
+  padding:10px;
+  font-weight:bold;
+}
+
+.container{
+  padding:15px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:16px;
+}
+
+.card{
+  background:white;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+}
+
+.card-body{
+  padding:12px;
+}
+
+.price{
+  font-size:24px;
+  font-weight:bold;
+  color:#e60023;
+}
+
+.badge-hot{
+  background:red;
+  color:white;
+  padding:3px 8px;
+  border-radius:6px;
+  font-size:12px;
+  margin-left:6px;
+}
+
+.free{
+  color:green;
   font-weight:bold;
   margin:6px 0;
 }
 
 .buttons{
   display:flex;
-  gap:6px;
-  margin-top:8px;
-}
-
-.btn{
-  flex:1;
-  text-decoration:none;
-  padding:8px 0;
-  font-size:13px;
-  border-radius:6px;
-  font-weight:bold;
+  gap:8px;
+  margin-top:10px;
 }
 
 .whatsapp{
-  background:#25d366;
+  flex:1;
+  background:#25D366;
   color:white;
+  padding:10px;
+  text-align:center;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 .buy{
-  background:#000;
+  flex:1;
+  background:black;
   color:white;
+  padding:10px;
+  text-align:center;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* Floating WhatsApp */
+.float-whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  z-index:999;
 }
 
 footer{
   text-align:center;
-  padding:15px;
-  font-size:13px;
-  background:#222;
-  color:#fff;
+  padding:20px;
+  background:#fff;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="offer">🔥 আজকের অফার – ফ্রি ডেলিভারি সারা বাংলাদেশ 🔥</div>
+
 <header>
   <h1>🌸 রঙমেলা 🌸</h1>
   <p>থ্রি-পিস অনলাইন শপ</p>
+  <a class="fb-btn" href="https://www.facebook.com/share/1ZkcCyBgbY/" target="_blank">📘 Facebook Page</a>
 </header>
 
-<div class="info">
-  💰 দাম: <strong>৳ ৫০০</strong> <br>
-  🚚 ফ্রি ডেলিভারি (সারা বাংলাদেশ)
+<div class="trust">
+✅ Cash on Delivery | 🚚 সারা বাংলাদেশ
 </div>
 
-<div class="product-grid">
+<div class="container">
 
-<!-- Product 1 -->
-<div class="product-card">
-<img src="images/FB_IMG_1766845156691.jpg">
-<h3>রঙমেলা থ্রি-পিস</h3>
-<div class="price-row">
-<span class="price">৳ ৫০০</span>
-<span class="hot">HOT</span>
-</div>
-<div class="delivery">🚚 ফ্রি ডেলিভারি</div>
-<div class="buttons">
-<a href="https://wa.me/8801762273479" class="btn whatsapp">📞 WhatsApp</a>
-<a href="#" class="btn buy">🛒 Buy Now</a>
-</div>
-</div>
-
-<!-- Product 2 -->
-<div class="product-card">
-<img src="images/FB_IMG_1766845165186.jpg">
-<h3>রঙমেলা থ্রি-পিস</h3>
-<div class="price-row">
-<span class="price">৳ ৫০০</span>
-<span class="hot">HOT</span>
-</div>
-<div class="delivery">🚚 ফ্রি ডেলিভারি</div>
-<div class="buttons">
-<a href="https://wa.me/8801762273479" class="btn whatsapp">📞 WhatsApp</a>
-<a href="#" class="btn buy">🛒 Buy Now</a>
-</div>
+<!-- PRODUCT -->
+<div class="card">
+  <img src="images/FB_IMG_1766845156691.jpg">
+  <div class="card-body">
+    <h3>রঙমেলা থ্রি-পিস</h3>
+    <div class="price">৳ ৫০০ <span class="badge-hot">HOT</span></div>
+    <div class="free">🚚 ফ্রি ডেলিভারি</div>
+    <div class="buttons">
+      <a class="whatsapp" 
+      href="https://wa.me/8801762273479?text=আমি রঙমেলা থ্রি-পিস অর্ডার করতে চাই (৳৫০০)" 
+      target="_blank">📞 WhatsApp</a>
+      <a class="buy" href="#">🛒 Buy Now</a>
+    </div>
+  </div>
 </div>
 
-<!-- Product 3 -->
-<div class="product-card">
-<img src="images/FB_IMG_1766845169266.jpg">
-<h3>রঙমেলা থ্রি-পিস</h3>
-<div class="price-row">
-<span class="price">৳ ৫০০</span>
-<span class="hot">HOT</span>
-</div>
-<div class="delivery">🚚 ফ্রি ডেলিভারি</div>
-<div class="buttons">
-<a href="https://wa.me/8801762273479" class="btn whatsapp">📞 WhatsApp</a>
-<a href="#" class="btn buy">🛒 Buy Now</a>
-</div>
-</div>
-
-<!-- বাকি ছবিগুলো একই স্টাইলে আছে -->
+<!-- বাকি কার্ডগুলো আগের মতো কপি করো -->
 
 </div>
+
+<a class="float-whatsapp" 
+href="https://wa.me/8801762273479?text=আমি রঙমেলা থেকে অর্ডার করতে চাই" 
+target="_blank">
+💬 WhatsApp Order
+</a>
 
 <footer>
-© 2025 রঙমেলা | WhatsApp: 01762-273479
+© 2025 রঙমেলা | থ্রি-পিস অনলাইন শপ <br>
+<a href="https://www.facebook.com/share/1ZkcCyBgbY/" target="_blank" style="color:#1877F2;font-weight:bold;">
+📘 Facebook Page
+</a>
 </footer>
 
 </body>

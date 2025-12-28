@@ -6,170 +6,39 @@
 <title>রংমেলা এক্সক্লুসিভ কালেকশন</title>
 
 <style>
-body{
-  margin:0;
-  font-family:system-ui, -apple-system, sans-serif;
-  background:#f7f7f7;
-}
-header{
-  background:#fff;
-  padding:10px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 2px 5px rgba(0,0,0,.1);
-}
-header img{
-  height:45px;
-}
-.hero{
-  background:linear-gradient(135deg,#ff5f6d,#ffc371);
-  color:#fff;
-  padding:30px 15px;
-  text-align:center;
-}
-.hero h1{
-  margin:0;
-  font-size:26px;
-}
-.hero p{
-  margin-top:8px;
-  font-size:16px;
-}
-.free{
-  background:#fff3cd;
-  text-align:center;
-  padding:10px;
-  font-weight:bold;
-  color:#856404;
-}
-.products{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  padding:10px;
-}
-.card{
-  background:#fff;
-  border-radius:10px;
-  overflow:hidden;
-  position:relative;
-  box-shadow:0 2px 5px rgba(0,0,0,.1);
-}
-.card img{
-  width:100%;
-  display:block;
-  cursor:pointer;
-}
-.badge{
-  position:absolute;
-  top:8px;
-  left:8px;
-  background:red;
-  color:#fff;
-  font-size:12px;
-  padding:3px 6px;
-  border-radius:5px;
-}
-.stock{
-  position:absolute;
-  top:8px;
-  right:8px;
-  background:green;
-  color:#fff;
-  font-size:12px;
-  padding:3px 6px;
-  border-radius:5px;
-}
-.card .info{
-  padding:8px;
-}
-.price{
-  font-size:18px;
-  font-weight:bold;
-  color:#e60023;
-}
-.buttons{
-  display:flex;
-  gap:5px;
-  margin-top:5px;
-}
-.buttons button{
-  flex:1;
-  padding:8px;
-  border:none;
-  border-radius:5px;
-  font-size:14px;
-}
-.buy{
-  background:#ff5f6d;
-  color:#fff;
-}
-.whatsapp{
-  background:#25D366;
-  color:#fff;
-}
-.review{
-  background:#fff;
-  margin:10px;
-  padding:10px;
-  border-radius:8px;
-}
-.review h3{
-  margin:0 0 5px 0;
-}
-footer{
-  background:#fff;
-  padding:15px;
-  text-align:center;
-  font-size:14px;
-}
-footer a{
-  color:#1877f2;
-  text-decoration:none;
-  font-weight:bold;
-}
-.sticky{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  display:flex;
-  z-index:999;
-}
-.sticky a{
-  flex:1;
-  padding:12px;
-  text-align:center;
-  color:#fff;
-  font-weight:bold;
-  text-decoration:none;
-}
-.call{background:#007bff;}
-.chat{background:#25D366;}
-/* Modal */
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:1000;
-}
-.modal img{
-  max-width:90%;
-  max-height:90%;
-}
-.modal.show{display:flex;}
+body{margin:0;font-family:system-ui;background:#f6f6f6}
+header{background:#fff;padding:10px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+header img{height:45px}
+.hero{background:linear-gradient(135deg,#ff5f6d,#ffc371);color:#fff;text-align:center;padding:30px 10px}
+.free{background:#fff3cd;padding:10px;text-align:center;font-weight:bold}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 5px rgba(0,0,0,.1);position:relative}
+.card img{width:100%;display:block;cursor:pointer}
+.badge{position:absolute;top:8px;left:8px;background:red;color:#fff;font-size:12px;padding:3px 6px;border-radius:5px}
+.stock{position:absolute;top:8px;right:8px;background:green;color:#fff;font-size:12px;padding:3px 6px;border-radius:5px}
+.info{padding:8px}
+.price{font-size:18px;font-weight:bold;color:#e60023}
+.buttons{display:flex;gap:5px;margin-top:5px}
+.buttons button{flex:1;padding:8px;border:none;border-radius:5px;color:#fff}
+.buy{background:#ff5f6d}
+.whatsapp{background:#25D366}
+.review{background:#fff;margin:10px;padding:10px;border-radius:8px}
+footer{background:#fff;padding:15px;text-align:center}
+.sticky{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:999}
+.sticky a{flex:1;padding:12px;text-align:center;color:#fff;font-weight:bold;text-decoration:none}
+.call{background:#007bff}
+.chat{background:#25D366}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:1000}
+.modal img{max-width:90%;max-height:90%}
+.modal.show{display:flex}
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="images/logo.png" alt="Rongmela">
-  <a href="https://www.facebook.com/share/1Eztqbjndu/" target="_blank">Facebook Page</a>
+  <img src="images/logo.png">
+  <a href="https://www.facebook.com/share/1Eztqbjndu/" target="_blank">Facebook</a>
 </header>
 
 <div class="hero">
@@ -177,67 +46,52 @@ footer a{
   <p>ফ্যাশন যা সবাই খুঁজছে</p>
 </div>
 
-<div class="free">
-  🚚 সারা বাংলাদেশ ফ্রি ডেলিভারি
-</div>
+<div class="free">🚚 সারা বাংলাদেশ ফ্রি ডেলিভারি</div>
 
 <div class="products">
-  <!-- 30 Products -->
-  <!-- Copy Pattern -->
-  <!-- Example RM_001 -->
-  <!-- Change only image name & code -->
-  <!-- START -->
-  <!-- Loop -->
-  <!-- I generated 30 manually -->
-  <!-- 1 -->
+<script>
+for(let i=1;i<=30;i++){
+  let n = i.toString().padStart(3,'0');
+  document.write(`
   <div class="card">
     <span class="badge">HOT</span>
     <span class="stock">In Stock</span>
-    <img src="images/RM_001.jpg" onclick="zoom(this.src)">
+    <img src="images/RM_${n}.jpg" onclick="zoom(this.src)">
     <div class="info">
-      <div>Product Code: RM-001</div>
+      <div>Product Code: RM-${n}</div>
       <div class="price">৳ ৫০০</div>
       <div class="buttons">
-        <button class="buy" onclick="order('RM-001')">Buy Now</button>
-        <button class="whatsapp" onclick="order('RM-001')">WhatsApp</button>
+        <button class="buy" onclick="order('RM-${n}')">Buy Now</button>
+        <button class="whatsapp" onclick="order('RM-${n}')">WhatsApp</button>
       </div>
     </div>
   </div>
-
-  <!-- Auto copy RM_002 to RM_030 -->
-  <!-- Repeat -->
-  <!-- I keep same structure -->
-  <!-- Just change numbers -->
-  <!-- ... -->
+  `);
+}
+</script>
 </div>
 
 <div class="review">
-  <h3>⭐ Customer Review</h3>
-  <p>“ড্রেসের কোয়ালিটি অনেক ভালো, ছবি অনুযায়ীই পেয়েছি” – আয়েশা</p>
-  <p>“ডেলিভারি ফাস্ট, খুব সুন্দর” – নুসরাত</p>
+  <b>⭐ Customer Review</b>
+  <p>ড্রেসের কোয়ালিটি অনেক ভালো – আয়েশা</p>
 </div>
 
-<footer>
-  © Rongmela | Order via WhatsApp  
-</footer>
+<footer>© Rongmela</footer>
 
 <div class="sticky">
   <a class="call" href="tel:01762273479">📞 Call</a>
   <a class="chat" href="https://wa.me/8801762273479">💬 WhatsApp</a>
 </div>
 
-<div class="modal" id="zoomModal" onclick="this.classList.remove('show')">
-  <img id="zoomImg">
+<div class="modal" id="m" onclick="this.classList.remove('show')">
+  <img id="z">
 </div>
 
 <script>
-function zoom(src){
-  document.getElementById('zoomImg').src = src;
-  document.getElementById('zoomModal').classList.add('show');
-}
-function order(code){
-  let msg = `অর্ডার করতে চাই\nProduct Code: ${code}\nদাম: ৳৫০০\nসারা বাংলাদেশ ফ্রি ডেলিভারি`;
-  window.open(`https://wa.me/8801762273479?text=${encodeURIComponent(msg)}`);
+function zoom(s){z.src=s;m.classList.add('show')}
+function order(c){
+  let t=`অর্ডার করতে চাই\nProduct Code: ${c}\nদাম: ৳৫০০`;
+  window.open(`https://wa.me/8801762273479?text=${encodeURIComponent(t)}`);
 }
 </script>
 

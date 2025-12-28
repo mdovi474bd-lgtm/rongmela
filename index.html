@@ -2,259 +2,121 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>রংমেলা এক্সক্লুসিভ কালেকশন</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f5f5f5;
-}
+body{margin:0;font-family:sans-serif;background:#f4f4f4}
+header{display:flex;align-items:center;justify-content:space-between;padding:10px;background:#fff;position:sticky;top:0;z-index:99}
+header img{height:40px}
+header a{color:#1877f2;font-weight:bold;text-decoration:none}
 
-/* HEADER */
-header{
-  background:#fff;
-  padding:10px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 2px 5px rgba(0,0,0,.1);
-}
-header img{
-  height:45px;
-}
-header a{
-  text-decoration:none;
-  color:#1877f2;
-  font-weight:bold;
-}
+.hero{background:#111;color:#fff;padding:25px;text-align:center}
+.hero h1{margin:0;font-size:22px}
+.hero p{margin:5px 0 0}
 
-/* HERO */
-.hero{
-  background:#111;
-  color:#fff;
-  padding:25px;
-  text-align:center;
-}
-.hero h1{margin:0;font-size:22px;}
-.hero p{margin-top:8px;font-size:15px;}
-.hero span{
-  background:#25D366;
-  padding:6px 12px;
-  border-radius:20px;
-  display:inline-block;
-  margin-top:10px;
-}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}
+.product{background:#fff;border-radius:8px;overflow:hidden;position:relative}
+.product img{width:100%;display:block}
+.badge{position:absolute;top:6px;left:6px;background:red;color:#fff;font-size:11px;padding:2px 6px;border-radius:4px}
+.price{padding:6px;font-size:16px;font-weight:bold;color:#e91e63;text-align:center}
 
-/* PRODUCTS */
-.products{
-  padding:15px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:12px;
-}
-.product{
-  background:#fff;
-  border-radius:10px;
-  overflow:hidden;
-  position:relative;
-}
-.product img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  cursor:pointer;
-}
-.badge{
-  position:absolute;
-  top:8px;
-  left:8px;
-  background:red;
-  color:#fff;
-  font-size:12px;
-  padding:4px 8px;
-  border-radius:5px;
-}
-.price{
-  padding:10px;
-  text-align:center;
-  font-size:18px;
-  font-weight:bold;
-  color:#e60000;
-}
+.buy{background:#ff5722;color:#fff;border:none;width:100%;padding:10px;font-size:16px}
 
-/* REVIEWS */
-.reviews{
-  background:#fff;
-  padding:30px 15px;
-}
-.reviews h2{text-align:center;}
-.review-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-}
-.review{
-  background:#f7f7f7;
-  padding:15px;
-  border-radius:10px;
-}
+.zoom{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:999}
+.zoom img{max-width:90%;max-height:90%}
 
-/* FOOTER */
-footer{
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:25px 15px 90px;
-}
-footer img{height:50px;margin-bottom:10px;}
-footer a{color:#25D366;text-decoration:none;}
+.form{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:1000}
+.form-box{background:#fff;padding:15px;border-radius:10px;width:90%}
+.form-box input,.form-box textarea{width:100%;margin-bottom:8px;padding:8px}
 
-/* STICKY BAR */
-.sticky{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  display:flex;
-  z-index:999;
-}
-.sticky button,
-.sticky a{
-  flex:1;
-  padding:18px;
-  font-size:18px;
-  font-weight:bold;
-  border:none;
-  color:#fff;
-  text-align:center;
-  text-decoration:none;
-}
-.buy{background:#111;}
-.wa{background:#25D366;}
+.sticky{position:fixed;bottom:0;left:0;width:100%;display:flex;z-index:99}
+.sticky a{flex:1;padding:15px;text-align:center;color:#fff;font-weight:bold;text-decoration:none;font-size:18px}
+.wa{background:#25D366}
+.call{background:#000}
 
-/* MODALS */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  justify-content:center;
-  align-items:center;
-  z-index:1000;
-}
-.modal-content{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  width:90%;
-  max-width:400px;
-}
-.modal-content img{
-  width:100%;
-}
-.close{
-  text-align:right;
-  cursor:pointer;
-  font-size:18px;
-}
-input,textarea{
-  width:100%;
-  padding:10px;
-  margin-top:10px;
-  border:1px solid #ccc;
-  border-radius:5px;
-}
-.submit{
-  background:#25D366;
-  color:#fff;
-  border:none;
-  padding:12px;
-  width:100%;
-  font-size:16px;
-  margin-top:15px;
-}
+.reviews{padding:15px;background:#fff}
+.review{background:#f9f9f9;padding:10px;margin-bottom:8px;border-radius:6px;font-size:14px}
+
+footer{background:#111;color:#fff;text-align:center;padding:15px;font-size:14px}
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="logo.png">
-  <a href="https://www.facebook.com/share/1Eztqbjndu/" target="_blank">Facebook Page</a>
+<img src="images/logo.png">
+<a href="https://www.facebook.com/share/1Eztqbjndu/" target="_blank">Facebook Page</a>
 </header>
 
-<section class="hero">
-  <h1>রংমেলা এক্সক্লুসিভ কালেকশন</h1>
-  <p>ফ্যাশন যা সবাই খুঁজছে</p>
-  <span>সারা বাংলাদেশ ফ্রি ডেলিভারি</span>
-</section>
+<div class="hero">
+<h1>রংমেলা এক্সক্লুসিভ কালেকশন</h1>
+<p>ফ্যাশন যা সবাই খুঁজছে</p>
+<p>🚚 সারা বাংলাদেশ ফ্রি ডেলিভারি</p>
+</div>
 
-<section class="products">
+<div class="products">
 <script>
 for(let i=1;i<=30;i++){
+let n=String(i).padStart(3,'0');
 document.write(`
 <div class="product">
 <span class="badge">HOT</span>
-<img src="images/FB_IMG_${i}.jpg" loading="lazy" onclick="zoom(this.src)">
+<img src="images/RM_${n}.jpg" loading="lazy" onclick="zoom(this.src)">
 <div class="price">৳ ৫০০</div>
+<button class="buy" onclick="order('RM-${n}')">Buy Now</button>
 </div>
 `);
 }
 </script>
-</section>
-
-<section class="reviews">
-<h2>⭐ কাস্টমার রিভিউ</h2>
-<div class="review-grid">
-  <div class="review">“কোয়ালিটি খুব ভালো” – তাসনিমা</div>
-  <div class="review">“ডেলিভারি ফাস্ট” – নুসরাত</div>
-  <div class="review">“দাম অনুযায়ী সেরা” – রিমি</div>
 </div>
-</section>
+
+<div class="reviews">
+<h3>⭐ কাস্টমার রিভিউ</h3>
+<div class="review">খুব সুন্দর ড্রেস, কোয়ালিটি ভালো ❤️</div>
+<div class="review">ডেলিভারি ফাস্ট, আবার নিব ইনশাআল্লাহ</div>
+<div class="review">দাম অনুযায়ী বেস্ট</div>
+</div>
 
 <footer>
-  <img src="logo.png">
-  <p>📞 WhatsApp: 01XXXXXXXXX</p>
-  <p><a href="https://www.facebook.com/share/1Eztqbjndu/" target="_blank">Facebook Page</a></p>
-  <p>© Rongmela</p>
+📞 01XXXXXXXXX <br>
+WhatsApp Order Available
 </footer>
 
-<!-- Sticky -->
 <div class="sticky">
-<button class="buy" onclick="openForm()">🛒 Buy Now</button>
-<a class="wa" href="https://wa.me/8801XXXXXXXXX?text=আমি%20রংমেলা%20থেকে%20৳500%20দামের%20ড্রেস%20অর্ডার%20করতে%20চাই" target="_blank">📞 WhatsApp</a>
+<a class="wa" href="https://wa.me/8801XXXXXXXXX">WhatsApp</a>
+<a class="call" href="tel:01XXXXXXXXX">Call Now</a>
 </div>
 
-<!-- Zoom -->
-<div class="modal" id="zoom">
-<div class="modal-content">
-<div class="close" onclick="closeZoom()">✖</div>
-<img id="zoomImg">
-</div>
+<div class="zoom" onclick="this.style.display='none'">
+<img id="zimg">
 </div>
 
-<!-- Order Form -->
-<div class="modal" id="order">
-<div class="modal-content">
-<div class="close" onclick="closeForm()">✖</div>
-<h3>অর্ডার ফর্ম</h3>
+<div class="form" id="form">
+<div class="form-box">
+<h3>Order Confirm</h3>
+<input id="code" readonly>
 <input placeholder="আপনার নাম">
-<input placeholder="মোবাইল নাম্বার">
+<input placeholder="মোবাইল নম্বর">
 <textarea placeholder="ঠিকানা"></textarea>
-<button class="submit">Confirm Order</button>
+<button class="buy" onclick="send()">Confirm Order</button>
 </div>
 </div>
 
 <script>
 function zoom(src){
- document.getElementById("zoomImg").src=src;
- document.getElementById("zoom").style.display="flex";
+document.getElementById('zimg').src=src;
+document.querySelector('.zoom').style.display='flex';
 }
-function closeZoom(){document.getElementById("zoom").style.display="none";}
-function openForm(){document.getElementById("order").style.display="flex";}
-function closeForm(){document.getElementById("order").style.display="none";}
+function order(c){
+document.getElementById('code').value=c;
+document.getElementById('form').style.display='flex';
+}
+function send(){
+let c=document.getElementById('code').value;
+let msg=`Order: ${c} | Price: ৳500`;
+window.location=`https://wa.me/8801XXXXXXXXX?text=${encodeURIComponent(msg)}`;
+}
 </script>
 
 </body>
